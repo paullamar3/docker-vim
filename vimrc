@@ -1,4 +1,35 @@
+" Plugins
+call plug#begin()
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'vim-scripts/wombat256.vim'
+Plug 'bling/vim-airline'
+call plug#end()
 
+" Default settings for syntastic assuming a new user.
+" ---------------------------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" End default syntastic settings. --------------------
+
+
+" Colors
+set t_Co=256
+try
+  colorscheme wombat256mod
+catch
+endtry
+
+" I want line numbers
+set number
+" And a visible statusline
+set laststatus=2
 
 " Initially pressing Enter returns to Normal mode
 " Pressing Shift-Enter (Insert mode) enters 'multiline' mode
