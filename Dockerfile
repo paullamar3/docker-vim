@@ -1,22 +1,19 @@
 ## Dockerfile for generic vim 7.4.
-FROM debian:jessie
+FROM paullamar3/docker-debian-plus:v0.1
 MAINTAINER Paul LaMar <pal3@outlook.com>
 
 # Set the language to support UTF-8
 ENV LANG     C.UTF-8
 
 # Install Vim
-RUN apt-get update && \
-    apt-get install -y  vim git tree && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN p_addpkgs vim git tree
 
 # Copy the default vimrc and plugin manager for root user
 COPY vimrc     /root/.vimrc
 COPY plug.vim  /root/.vim/autoload/
 
 # Add the vim user
-RUN adduser --disabled-password  --gecos "Vim,,," vim
+RUN p_adduser vim Vim
 
 # Copy the default vimrc and plugin manager for vim user
 COPY vimrc /home/vim/.vimrc

@@ -4,6 +4,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/wombat256.vim'
 Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Default settings for syntastic assuming a new user.
