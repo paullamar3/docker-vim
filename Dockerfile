@@ -1,5 +1,5 @@
 ## Dockerfile for generic vim 7.4.
-FROM paullamar3/docker-debian-plus:v0.1
+FROM paullamar3/docker-debian-plus:v0.2.1
 MAINTAINER Paul LaMar <pal3@outlook.com>
 
 # Set the language to support UTF-8
